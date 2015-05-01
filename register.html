@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<title>Register Page</title>
+<link rel="icon" href="../img/images.png" >
+<link rel="stylesheet" href="css/style.css" />
+<link href='http://fonts.googleapis.com/css?family=Engagement' rel='stylesheet' type='text/css'>
+<!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+	var scrollSpeed = 70;
+	var step = 1;
+	var current = 0;
+	var imageWidth = 2247;
+	var headerWidth = 800;		
+
+	var restartPosition = -(imageWidth - headerWidth);
+
+	function scrollBg(){
+		current -= step;
+		if (current == restartPosition){
+			current = 0;
+		}
+
+		$('#header').css("background-position",current+"px 0");
+	}
+
+	var init = setInterval("scrollBg()", scrollSpeed);
+</script>
+<script type="text/javascript">
+	  function unn(e)
+	  {
+	  var tn= document.getElementById("name").value;
+	  var em=document.getElementById("email").value;
+	  var cn=document.getElementById("cno").value;
+	  var coll= document.getElementById("coll").value;
+	  var coll= document.getElementById("year").value;
+	  var coll= document.getElementById("dept").value;
+	  
+	  if(tn=="" || em=="" || cn=="" || bd=="" || coll==""|| year=="" || dept=="" )
+	  {
+	  alert("Field should not be left empty!");
+	  
+	  e.preventDefault();
+	  alert("sdf"+ event.isDefaultPrevented());
+	  }
+	  }
+	</script>
+    <script src="js/jquery.uniform.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(function(){
+        $("input:checkbox, input:radio, input:file, select").uniform();
+      });
+    </script>
+    <style type="text/css" media="screen">
+	body{
+		background-color: #C0DEED;
+		margin:0;
+		padding:0;
+	}
+
+	#header{
+		height:130px;
+		background: #8EC1DA url('images/bg-clouds.jpg') repeat-x scroll left top;
+		text-align:center;
+		margin-top:-30px;
+	}
+
+	#header h2{
+		padding-top:35px;
+		font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+		color:white;
+		font-size:45px;
+	}
+
+	#content{
+		background-color:#fff;
+		height:1050px;
+		width:980px;
+		margin:25px auto 0 auto;
+		-moz-border-radius:10px;
+		-webkit-border-radius:10px;
+	}
+</style>
+</head>
+<body><div id="container">
+	<div id="header">
+<h1>Register</h1>
+	</div><!-- #header -->
+
+	<div id="content">
+		<!-- Your content will go here -->
+	
+<article>
+<form method="post" action="reg.php">
+	<ul>
+        <li>
+        	<label for="name" style="font-size:15pt;">Your Name:</label>
+            <input type="text" size="40" id="name" name="name" placeholder="Enter your name" required autofocus/>
+        </li>
+        <li>
+        	<label for="email" style="font-size:15pt;">Your Email:</label>
+            <input type="email" name="email" size="40" id="email"  required />
+        </li>
+        <li>
+        	<label style="font-size:15pt;">Contact Number:</label>
+            <input type="text" name="cno" size="40" id="cno"  required />
+        </li>
+        <li>
+        	<label style="font-size:15pt;">College:</label>
+            <input type="text" name="coll" size="40" id="coll"  required />
+        </li>
+        <li>
+            <label style="font-size:15pt;">Department:</label>
+            <select name="dept" id="dept" required >
+                <option value="" selected="selected"> Select </option>
+							<option value='Aeronautical'>Aeronautical</option>
+							<option value='Civil'>Civil</option>
+							<option value='Computer'>Computer Science</option>								
+							<option value='ECE'>Electronics and Communication</option>
+							<option value='EEE'>Electricals and Electronics</option>
+							<option value='EIE'>Electricals and Instrumentation</option>
+							<option value='IT'>Information technology</option>
+							<option value='IC'>Instrumentation and Control</option>
+							<option value='Mech'>Mechanical</option>
+							<option value=''>other</option>
+                
+            </select>
+        </li>
+        <li>
+            <label style="font-size:15pt;"><input type="radio" name="gender" value="male"  required /> Male</label>
+            <label style="font-size:15pt;"><input type="radio" name="gender" value="female"  required /> Female</label>
+        </li>
+        <li>
+            <label style="font-size:15pt;">Year of Study:</label>
+            <select name="year" id="year" required >
+                <option value="" selected="selected"> Select </option>
+							<option value='First'>First</option>
+							<option value='Second'>Second</option>
+							<option value='Third'>Third</option>								
+							<option value='Fourth'>Fourth</option>
+							<option value='Other'>Other</option>
+                
+            </select>
+        </li>
+        <li>	Events &nbsp;&nbsp;&nbsp;&nbsp;
+							<br></br>
+							
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="bigb" id="events" value="paper" > <span style="font-size:13pt;" >Paper Exposit</span><br><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="click" id="events" value="click" > <span style="font-size:13pt;" >Photo Mania </span><br><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="bigb" id="events" value="bigb" > <span style="font-size:13pt;" >Big B </span><br><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="bigb" id="events" value="code" > <span style="font-size:13pt;" >Code Marathon</span><br><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="design" id="events" value="design" > <span style="font-size:13pt;" >Design Buzz </span><br><br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="hide" id="events" value="hide" ><span style="font-size:13pt;" > Hide n Seek </span><br><br>
+			
+		</li>
+	</ul>
+    <p>
+        <button type="submit" class="action" onclick="unn(event)">Register</button>
+        <button type="reset" class="right">Clear</button>
+    </p>
+	<img src="images/uniq1.jpeg" height="50" width="150" style="position:relative;left:40%;top:10%">
+</form>
+</article>
+</div><!-- #content -->
+</div><!-- #container -->
+<footer>
+<p style="font-size:20px;">Click <a style="text-decoration:none" href="https://www.google.co.in/maps/dir/Sathyamangalam+Bus+Stop,+Bus+Station+Road,+North+Rangasamuthram,+Sathyamangalam,+Tamil+Nadu/Bannari+Amman+Institute+of+Technology,+Sathyamangalam,+Tamil+Nadu/@11.501452,77.2523741,15z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x3ba92126b1ba295b:0xc04572f5bdf50cb0!2m2!1d77.245365!2d11.498526!1m5!1m1!1s0x3ba9215d6d1b28f9:0xf48946a7dfcfeb1a!2m2!1d77.276433!2d11.4952" target="_blank"><img src="images/ampp.png" height="30px" width="30px"> </a>for our college Roadmap</p>
+</footer>
